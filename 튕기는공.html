@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {padding:0;margin:0}
+        canvas {background: rgb(112, 112, 112);display: block;} 
+    </style>
+</head>
+<body>
+    <canvas id='c' height="1000" width="600"></canvas>
+    <script>
+        var canvas = document.getElementById('c');
+        var ctx = canvas.getContext('2d')
+        var ballX = 0;
+        var ballY = 1000;
+        var velocityY = prompt('속도');
+        var velocityX = 2;
+        function draw(){
+            ctx.fillStyle = "black"
+            ctx.fillRect(0,0,canvas.width,canvas.height)
+            ctx.fillStyle = "green"
+            ctx.beginPath();
+            ctx.arc(ballX,ballY,20,0,Math.PI*2)
+            ctx.fill();
+            ctx.closePath();
+            ballX += velocityX
+            ballY -= velocityY
+            velocityX += 0.02
+            velocityY -= a
+        }
+        a = prompt('가속도')
+        setInterval(draw,50)
+    </script>
+    
